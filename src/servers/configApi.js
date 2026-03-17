@@ -1,0 +1,1 @@
+export const API_URL = "https://thin-women-type.loca.lt"
