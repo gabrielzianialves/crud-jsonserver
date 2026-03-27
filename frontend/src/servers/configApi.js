@@ -1,1 +1,1 @@
-export const API_URL = "https://thin-women-type.loca.lt"
+export const API_URL = "http://hscqx-2804-14c-490-10fe-3d0c-de0c-a6cc-26a9.a.free.pinggy.link"

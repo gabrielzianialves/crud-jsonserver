@@ -1,3 +1,8 @@
+import React from "react";
+import { View, Text, Button } from "react-native";
+import styles from "../styles/styles";
+import { deletePerson } from "../servers/peopleCrud";
+
 export default function CardPersonal({ item, navigation, refresh }){
 
     return(
@@ -9,6 +14,10 @@ export default function CardPersonal({ item, navigation, refresh }){
 
                 <Text style={styles.email}>
                     {item.email}
+                </Text>
+
+                <Text style={styles.phone}>
+                    {item.phone}
                 </Text>
             </View>
             

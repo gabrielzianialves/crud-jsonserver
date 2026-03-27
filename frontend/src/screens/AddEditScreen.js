@@ -4,16 +4,17 @@ import styles from "../styles/styles";
 import { createPerson, updatePerson } from "../servers/peopleCrud";
 
 export default function AddEditScreen({ route, navigation }) {
-
+ 
     const person = route.params?.person;
 
     const [firstName, setFirstName] = useState(person?.firstName || "");
     const [lastName, setLastName] = useState(person?.lastName || "");
     const [email, setEmail] = useState(person?.email || "");
+    const [phone, setPhone] = useState(person?.phone || "");
 
     async function save(){
 
-        const data = { firstName, lastName, email };
+        const data = { firstName, lastName, email, phone };
 
         if(person) {
             await updatePerson(person.id, data);
@@ -44,6 +45,12 @@ export default function AddEditScreen({ route, navigation }) {
                 placeholder="Email"
                 value={email}
                 onChangeText={setEmail}
+            />
+
+            <TextInput
+                placeholder="Phone"
+                value={phone}
+                onChangeText={setPhone}
             />
 
             <Button

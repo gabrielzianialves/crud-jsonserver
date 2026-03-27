@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, FlatList, Button } from "react-native";
 import styles from "../styles/styles";
 import { getPeople, deletePerson } from "../servers/peopleCrud";
+import CardPersonal from "../components/CardPersonal";
 
 export default function HomeScreen({ navigation }) {
 

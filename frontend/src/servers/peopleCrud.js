@@ -1,13 +1,25 @@
 import { API_URL } from "./configApi";
 
 //buscar pessoas
+async function assertJsonResponse(response) {
+    const text = await response.text();
+
+    if (!response.ok) {
+        throw new Error(`API error ${response.status}: ${text}`);
+    }
+    try {
+        return JSON.parse(text);
+    } 
+    catch (err) {
+        throw new Error(`JSON parse error from API (${response.url}): ${err.message} / body: ${text}`);
+    }
+}
+
 export async function getPeople() {
 
     const response = await fetch(`${API_URL}/people`);
-
-    const data = await response.json();
-
-    return data;
+    return assertJsonResponse(response);
+    
 }
 
 //criar pessoa
@@ -21,7 +33,7 @@ export async function createPerson(person) {
         body: JSON.stringify(person)
     });
 
-    return response.json();
+    return assertJsonResponse(response);
 }
 
 //atualizar pessoa
@@ -35,7 +47,7 @@ export async function updatePerson(id, person) {
         body: JSON.stringify(person)
     });
 
-    return response.json();
+    return assertJsonResponse(response);
 }
 
 //deletar pessoa
