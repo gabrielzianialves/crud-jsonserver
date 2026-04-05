@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import styles from "../styles/styles";
+import { Pencil, Trash } from 'lucide-react-native';
 import { deletePerson } from "../servers/peopleCrud";
 
 export default function CardPersonal({ item, navigation, refresh }){
@@ -23,18 +24,24 @@ export default function CardPersonal({ item, navigation, refresh }){
             
             <View>
 
-                <Button
+                <TouchableOpacity
+                    style={styles.editRemoveButton}
                     title="Editar"
                     onPress={() => navigation.navigate("AddEdit", { person: item })}
-                />
+                >
+                    <Pencil size={16} color={"white"}/>
+                </TouchableOpacity>
 
-                <Button
+                <TouchableOpacity
+                    style={styles.editRemoveButton}
                     title="Deletar"
                     onPress={async () => {
                         await deletePerson(item.id);
                         refresh();
                     }}
-                />
+                >
+                    <Trash size={16} color={"white"}/>
+                </TouchableOpacity>
 
             </View>
         </View>

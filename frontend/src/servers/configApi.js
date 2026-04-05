@@ -1,1 +1,1 @@
-export const API_URL = "https://rna-woods-laboratories-saves.trycloudflare.com"
+export const API_URL = "https://vpn-likely-opposition-respective.trycloudflare.com"
