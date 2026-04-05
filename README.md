@@ -96,6 +96,10 @@ Ou (caso use tunnel):
 export const API_URL = "https://SEU-LINK.trycloudflare.com";
 ```
 
+*Importante:*
+O link gerado pelo tunnel é temporário e muda a cada vez que o serviço é reiniciado.
+O link geralmente tem duração limitada (alguns minutos ou horas). Sempre que o tunnel for reiniciado, um novo link será gerado, é necessário atualizar a variável API_URL no arquivo configApi.js com o novo endereço.
+
 ---
 
 ### 3. Rodar o app
