@@ -14,7 +14,7 @@ O sistema permite:
 
 A aplicação consome uma API simulada utilizando JSON Server.
 
-Vídeo de demonstração do aplicativo:
+Vídeo de demonstração do aplicativo: https://youtu.be/dJSdRr3o63k
 
 ---
 
